@@ -14,4 +14,16 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  question: { 
+    fontSize: 20, 
+    marginBottom: 20
+  },
+  title: { 
+    fontSize: 28, 
+    marginBottom: 20 
+  },
+  score: { 
+    fontSize: 24, 
+    marginBottom: 40 
+  },
 });

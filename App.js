@@ -1,24 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Button, ImageBackground } from 'react-native';
-import {
-  SafeAreaView,
-  SafeAreaProvider,
-} from 'react-native-safe-area-context';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { styles } from './app-styles';
+import HomeScreen from './screens/HomeScreen';
+import QuizScreen from './screens/QuizScreen';
+import ResultScreen from './screens/ResultScreen';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.container}>
-        <ImageBackground
-          source={require('./assets/earth.png')}
-          style={styles.background}
-          resizeMode='cover'
-          >
-            <Button title="Press me" onPress={() => alert("Button pressed")} />
-        </ImageBackground>
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Questions" component={QuizScreen} />
+        <Stack.Screen name="Result" component={ResultScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
