@@ -37,7 +37,7 @@ export async function insertQuestionsIfNotExists() {
         [ ' Qual e a capital do Japao? ', ' Pequim/Toquio/Seul/Bangkok ', '1' ],
         [ ' Qual e o resultado de 15 + 27? ', ' 40/42/41/43 ', '1' ],
         [ ' Qual gas as plantas absorvem da atmosfera? ', ' Oxigenio/Nitrogenio/Dioxido de carbono/Helio ', '2' ],
-        [ ' Qual e o maior animal do planeta? ', ' Elefante/Azul Baleia/Tubarao Branco/Girafa ', '1' ],
+        [ ' Qual e o maior animal do planeta? ', ' Elefante/Baleia Azul/Tubarao Branco/Girafa ', '1' ],
         [ ' Quantos lados tem um hexagono? ', ' 5/6/7/8 ', '1' ],
         [ ' Quem foi o primeiro presidente do Brasil? ', ' Getulio Vargas/Deodoro da Fonseca/Juscelino Kubitschek/Dom Pedro II ', '1' ],
         [ ' Qual e o rio mais longo do mundo? ', ' Amazonas/Nilo/Mississippi/Yangtze ', '1' ],
