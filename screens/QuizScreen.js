@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Pressable } from 'react-native';
 
-import { styles } from '../app-styles';
-import { getQuestions } from '../functions/get-questions';
+import { styles } from '../appStyles';
+import { getQuestions } from '../functions/GetQuestions';
 
 export default function QuizScreen({ navigation }) {
   const [questions, setQuestions] = useState([]);
@@ -10,8 +10,11 @@ export default function QuizScreen({ navigation }) {
   const [score, setScore] = useState(0);
 
   useEffect(() => {
-    const allQuestions = getQuestions();
-    setQuestions(allQuestions);
+    async function loadQuestions() {
+      const allQuestions = await getQuestions();
+      setQuestions(allQuestions);
+    }
+    loadQuestions();
   }, []);
 
   if (questions.length === 0) {
@@ -40,12 +43,22 @@ export default function QuizScreen({ navigation }) {
     <View style={styles.container}>
       <Text style={styles.question}>{currentQuestion.question}</Text>
 
-      {currentQuestion.options.map((option, index) => (
-        <Button
+      {currentQuestion.answers.map((answerText, index) => (
+        <Pressable
           key={index}
-          title={option.text}
-          onPress={() => handleAnswer(option.correct)}
-        />
+          style={{
+            backgroundColor: '#2196F3',
+            padding: 10,
+            marginVertical: 5,
+            borderRadius: 5
+          }}
+          onPress={() => {
+            const isCorrect = index === Number(currentQuestion.correct_answer);
+            handleAnswer(Boolean(isCorrect));
+          }}
+        >
+          <Text style={{ color: 'white', textAlign: 'center' }}>{answerText}</Text>
+        </Pressable>
       ))}
     </View>
   );

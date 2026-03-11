@@ -1,8 +1,8 @@
-import { StyleSheet, Button, ImageBackground } from 'react-native';
+import { Pressable, ImageBackground, Text } from 'react-native'; 
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import React from 'react';
 
-import { styles } from '../app-styles';
+import { styles } from '../appStyles';
 
 export default function HomeScreen({ navigation }) {
   return (
@@ -13,10 +13,22 @@ export default function HomeScreen({ navigation }) {
           style={styles.background}
           resizeMode='cover'
         >
-          <Button
-            title="Start Quiz"
+          <Pressable
+            style={() => [
+              {
+                backgroundColor: '#2196F3',
+                paddingVertical: 12,
+                paddingHorizontal: 25,
+                borderRadius: 8,
+                marginTop: 20,
+              }
+            ]}
             onPress={() => navigation.navigate('Questions')}
-          />
+          >
+            <Text style={{ color: 'white', fontSize: 18, textAlign: 'center' }}>
+              Start Quiz
+            </Text>
+          </Pressable>
         </ImageBackground>
       </SafeAreaView>
     </SafeAreaProvider>
