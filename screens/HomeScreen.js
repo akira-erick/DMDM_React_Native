@@ -23,7 +23,7 @@ export default function HomeScreen({ navigation }) {
             onPress={() => navigation.navigate('Questions')}
           >
             <Text style={{ color: 'white', fontSize: 18, textAlign: 'center' }}>
-              Start Quiz
+              Comecar
             </Text>
           </Pressable>
         </ImageBackground>

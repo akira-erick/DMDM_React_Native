@@ -8,8 +8,8 @@ export default function ResultScreen({ navigation, route }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Quiz Completed!</Text>
-      <Text style={styles.score}>You scored {score} points</Text>
+      <Text style={styles.title}>Quiz Completado!</Text>
+      <Text style={styles.score}>Voce fez {score} pontos!</Text>
       
         <Pressable
           style={{ 
@@ -22,7 +22,7 @@ export default function ResultScreen({ navigation, route }) {
           onPress={() => navigation.navigate('Home')}
         >
           <Text style={{ color: 'white', fontSize: 18, textAlign: 'center' }}>
-            Play Again
+            Jogar de novo
           </Text>
       </Pressable>
     </View>
