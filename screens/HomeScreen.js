@@ -10,19 +10,16 @@ export default function HomeScreen({ navigation }) {
       <SafeAreaView style={styles.container}>
         <ImageBackground
           source={require('../assets/earth.png')}
-          style={styles.background}
-          resizeMode='cover'
+          style={[styles.background, { resizeMode: 'cover' }]}
         >
           <Pressable
-            style={() => [
-              {
+            style={{
                 backgroundColor: '#2196F3',
                 paddingVertical: 12,
                 paddingHorizontal: 25,
                 borderRadius: 8,
                 marginTop: 20,
-              }
-            ]}
+              }}
             onPress={() => navigation.navigate('Questions')}
           >
             <Text style={{ color: 'white', fontSize: 18, textAlign: 'center' }}>

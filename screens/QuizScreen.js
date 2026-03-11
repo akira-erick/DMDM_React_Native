@@ -35,7 +35,7 @@ export default function QuizScreen({ navigation }) {
     if (currentIndex + 1 < questions.length) {
       setCurrentIndex(currentIndex + 1);
     } else {
-      navigation.navigate('Result', { score });
+      navigation.navigate('Result', { score: Number(score) });
     }
   };
 
@@ -54,7 +54,7 @@ export default function QuizScreen({ navigation }) {
           }}
           onPress={() => {
             const isCorrect = index === Number(currentQuestion.correct_answer);
-            handleAnswer(Boolean(isCorrect));
+            handleAnswer(isCorrect);
           }}
         >
           <Text style={{ color: 'white', textAlign: 'center' }}>{answerText}</Text>
